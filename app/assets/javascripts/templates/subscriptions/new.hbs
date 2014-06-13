@@ -1,0 +1,51 @@
+
+<h3>Payment Information </h3>
+
+  <form id="payment-form" {{action purchase on=submit}}>
+    <div {{bindAttr class=":alert :alert-error errors:show:hide"}}>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Hold up!</strong> {{errors}}
+    </div>
+
+    <div class="row-fluid">
+      <div class="span4">
+        <div {{bindAttr class=":control-group isValidCardNumber::error"}}>
+          <label class="control-label">Card number</label>
+          <div class="controls">
+            {{view Ember.TextField id="number" type="text" valueBinding="number" class="input-block-level"}}
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <div {{bindAttr class=":control-group isValidCardExpiry::error"}}>
+          <label class="control-label">
+            Expiration
+          </label>
+          {{view Ember.TextField id="expiration" type="text" valueBinding="expiration" placeholder="MM/YYYY" class="input-mini"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span4">
+        <div {{bindAttr class=":control-group isValidName::error"}}>
+          <label class="control-label">
+            Name on card
+          </label>
+          {{view Ember.TextField id="name" type="text" valueBinding="name" class="input-block-level"}}
+        </div>
+      </div>
+      <div class="span3">
+        <div {{bindAttr class=":control-group isValidCardCVC::error"}}>
+        <label class="control-label">Card code</label>
+        <div class="controls">
+          {{view Ember.TextField id="cvc" type="text" valueBinding="cvc" placeholder="CVC" class="input-mini"}}
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <button type="submit" {{bindAttr disabled="processingPurchase"}} class="btn">{{#if plan }}Subscribe {{else}} Update Card {{/if}}</button>
+  </form>
+

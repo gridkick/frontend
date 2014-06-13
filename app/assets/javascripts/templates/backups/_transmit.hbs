@@ -1,0 +1,59 @@
+
+<ol>
+  <li>
+    Download and install Transmit from their <a href="http://panic.com/transmit/" target="_blank">website.</a>
+  </li>
+  <li>
+    Open the program
+  </li>
+  <li>
+    Open the Favorites menu and select <b>“Add to Favorites…”</b>
+  </li>
+  <li>
+    Type a name that is meaningful such as <b>“GridKick Backups”</b>
+  </li>
+  <li>
+    Select <b>“Amazon S3”</b> as the protocol
+  </li>
+  <li>
+    Copy this Access Key ID: <code>{{cred.accessKeyId}}</code>
+  </li>
+  <li>
+    Back in Transmit, paste the Access Key ID as the username
+  </li>
+  <li>
+    Copy this Secret Access Key: <code>{{cred.secretAccessKey}}</code>
+  </li>
+  <li>
+    Paste it as the <b>“Secret”</b> in Transmit
+    <ol type="a"><li>Select the <b>“Ask Every Time”</b> box if you don’t want the secret saved</li></ol>
+  </li>
+  <li>
+    If they aren’t already visible, click on <b>“More Options”</b> to view advanced settings
+  </li>
+  <li>
+    Copy this remote path: <code>/{{cred.bucketName}}/{{App.Auth.user.id}}</code>
+  </li>
+  <li>
+    In Transmit, set the Remote Path with the value you just copied above
+  </li>
+  <li>
+    Click <b>“Save”</b>
+  </li>
+  <li>
+    You should now see your new S3 favorite in the list
+  </li>
+  <li>
+    Double click it
+  </li>
+  <li>
+    The top level of folders should correspond to your instance IDs listed on the {{#linkTo "instances"}} databases tab {{/linkTo}}
+  </li>
+  <li>
+    By navigating deeper, you will come to a list of dated folders corresponding to each of your backups
+  </li>
+  <li>
+    Dig even deeper to download the compressed backup for a selected date
+  </li>
+
+</ol>

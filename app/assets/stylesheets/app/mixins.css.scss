@@ -1,0 +1,30 @@
+
+//Same as bootstrap, remove if we start compiling bootstrap to do more customizations
+$grayDarker: #222;
+$grayDark: #333;
+$gray: #555;
+$grayLight: #999;
+$grayLighter: #e7e7e7;
+$contentBkgColor: #fff;
+$blueDark: #21648B;
+$blue: lighten($blueDark, 5%);
+
+$grid: #4D6480;
+$gridDark: darken($grid, 5%);
+$kick: #6A8F87;
+
+$twitter:  #00acee;
+$google:   #da4937;
+$facebook: #4862a3;
+
+@mixin linkGray($bkg-color: transparent) {
+  a {
+    color: $grayLight;
+    &:hover {
+      color: darken($grayLight, 30%);
+      text-decoration: none;
+      background-color: $bkg-color;
+    }
+  }
+
+}

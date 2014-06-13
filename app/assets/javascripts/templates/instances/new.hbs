@@ -1,0 +1,54 @@
+<div class="row" data-toggle="buttons-radio">
+  <div class="span">
+    <div class="control-group">
+      <label>Backups Enabled</label>
+
+      {{#each provider in backupsEnabledProviders}}
+        <button class="btn provider-btn" {{action 'providerClicked' provider}}>{{provider.name}}</button>
+      {{/each}}
+    </div>
+    <div class="control-group">
+      <label>Backups Disabled  <i class="icon-info-sign" data-title= "Automatic daily backups are not enabled on these servers and therefore not recommended for production use."></i></label>
+
+      {{#each provider in backupsDisabledProviders}}
+        <button class="btn provider-btn" {{action 'providerClicked' provider}}>postgres + redis</button>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div class="row cloud-hosts">
+  <div class="span2 select-container">
+    {{input cloudHost as='select'
+           collection="controllers.instances.cloudHosts"
+           selection="selectedCloudHost"
+           optionValuePath="content.slug"
+           optionLabelPath="content.name"
+           label="Cloud Host"
+           inputConfig="class:span2"
+    }}
+  </div>
+  <div class="span2 select-container">
+    {{input dataCenter as='select'
+           collection="dataCenters"
+           selection="selectedDataCenter"
+           optionValuePath="content.slug"
+           optionLabelPath="content.name"
+           label="Data Center"
+           inputConfig="class:span2"
+    }}
+  </div>
+  <div class="span2 select-container">
+    {{input availabilityZone as='select'
+           collection="availabilityZones"
+           selection="selectedAvailabilityZone"
+           optionValuePath="content.id"
+           optionLabelPath="content.name"
+           label="Availability Zone"
+           inputConfig="class:span2"
+    }}
+  </div>
+</div>
+
+
+{{view Bootstrap.Forms.TextField valueBinding="name" placeholder="Nickname" label="" help=""}}

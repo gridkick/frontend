@@ -1,0 +1,57 @@
+<p class="well">
+Note: Currently, you need to use a snapshot build of Cyberduck with a minimum version of 4.4 r12848. See instructions <a href="https://trac.cyberduck.ch/wiki/help/en/faq#NightlyandBetabuilds" target="_blank">here</a> on how to enable this.
+</p>
+<ol>
+  <li>
+    Download and install Cyberduck from their <a href="http://cyberduck.ch" target="_blank">website.</a>
+  </li>
+  <li>
+    Open the program
+  </li>
+  <li>
+    Open the Bookmarks menu and select <b>“New Bookmark…”</b>
+  </li>
+  <li>
+    Select <b>“S3 (Amazon Simple Storage Service)”</b>
+  </li>
+  <li>
+    Type a name that is meaningful such as <b>“GridKick Backups”</b>
+  </li>
+  <li>
+    Copy this Access Key ID: <code>{{cred.accessKeyId}}</code>
+  </li>
+  <li>
+    Back in Cyberduck, paste the Access Key ID as the username
+  </li>
+  <li>
+    Copy this remote path: <code>/{{cred.bucketName}}/{{App.Auth.user.id}}</code>
+  </li>
+  <li>
+    In Cyberduck, set the Remote Path with the value you just copied above
+  </li>
+  <li>
+    Close the New Bookmark window to save it
+  </li>
+  <li>
+    Double click the new Bookmark in main window to be prompted for your Secret Access Key
+  </li>
+  <li>
+    Paste this value into Cyberduck: <code>{{cred.secretAccessKey}}</code>
+  </li>
+  <li>
+    Select the <b>“Add to Keychain”</b> box if you want the secret saved securely
+  </li>
+  <li>
+    Click <b>“Login”</b>
+  </li>
+  <li>
+    The top level of folders should correspond to your instance IDs listed on the {{#linkTo "instances"}} databases tab {{/linkTo}}
+  </li>
+  <li>
+    By navigating deeper, you will come to a list of dated folders corresponding to each of your backups
+  </li>
+  <li>
+    Dig even deeper to download the compressed backup for a selected date
+  </li>
+
+</ol>

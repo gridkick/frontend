@@ -1,0 +1,119 @@
+{{#unless model.isNew}}
+  <div class="payment-info">
+    <h4>Payment Info</h4>
+
+    <img {{bindAttr src="paymentLogo"}} alt="Logo" class="logo">
+    <span>
+      **** **** **** {{lastDigits}}
+     </span>
+    <span>
+      {{expirationDate}}
+    </span>
+
+    <span>
+      {{name}}
+    </span>
+
+    {{#linkTo "subscriptions.new" class="btn btn-small"}} Update/Change Card {{/linkTo}}
+
+  </div>
+{{/unless}}
+
+<h4>Subscription </h4>
+
+{{#if App.Auth.user.promoCode}}
+  {{view Bootstrap.AlertMessage type="success" messageBinding=promoAppliedMsg}}
+{{/if}}
+
+<div {{bindAttr class=":alert :alert-error errors:show:hide"}}>
+      <button type="button" class="close" data-dismiss="alert" {{action removeErrors}}>&times;</button>
+      <strong>Hold up!</strong> {{errors}}
+</div>
+
+<div class="plans row-fluid">
+  <div class="span3 plan all">
+    <div class="header">
+      <div class="number">
+        All Servers
+      </div>
+    </div>
+
+
+    <ul class="price-description">
+      <li>
+        <i class="icon-check"></i> Any supported database
+      </li>
+      <li>
+        <i class="icon-check"></i> SSDs for fast performance
+      </li>
+      <li>
+        <i class="icon-check"></i> Daily backups
+      </li>
+      <li>
+        <i class="icon-check"></i> 512MB Memory*
+      </li>
+
+    </ul>
+
+    <div class="memory-note">* For more memory contact us</div>
+
+  </div>
+  <div class="span3 plan basic">
+    <div class="header">
+
+      <div class="number-text">Limited to</div>
+      <div class="number">1</div>
+      <div class="number-text">database server</div>
+    </div>
+
+    <div class="subscribe-action">
+      <div class="price">$30/month</div>
+      <div class="trial">(7 day free trial)</div>
+      <div class="get-started">
+        <button href="#" {{action "newSubscription" 1 }} {{bindAttr disabled="plan1"}} {{bindAttr class=":btn :btn-large plan1:btn-inverse"}}>{{view.plan1BtnText}}</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="span3 plan sweet">
+    <div class="header">
+      <div class="number-text">Up to</div>
+      <div class="number">3</div>
+      <div class="number-text">database servers</div>
+    </div>
+
+
+    <div class="subscribe-action">
+      <div class="price">$75/month</div>
+      <div class="trial">(7 day free trial)</div>
+      <div class="get-started">
+         <button {{action "newSubscription" 3}} {{bindAttr disabled="plan3"}} {{bindAttr class=":btn :btn-large plan3:btn-inverse"}}>{{view.plan3BtnText}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="span3 plan awesome">
+     <div class="header">
+       <div class="number-text">Up to</div>
+       <div class="number">6</div>
+       <div class="number-text">database servers</div>
+      </div>
+
+    <div class="subscribe-action">
+      <div class="price">$130/month</div>
+      <div class="trial">(7 day free trial)</div>
+      <div class="get-started">
+         <button href="#" {{action "newSubscription" 6 }} {{bindAttr disabled="plan6"}} {{bindAttr class=":btn :btn-large plan6:btn-inverse"}}>{{view.plan6BtnText}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if isActive}}
+  <a {{action 'cancel'}} href="#">End your subscription</a>
+{{/if}}
+
+
+
+

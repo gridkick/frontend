@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> GridKick | Databases on Demand</title>
+    <meta name="description" content="Provision, manage, monitor and scale your database in minutes.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="<%= root_url %>assets/logo_square_lg.png" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico?v=1">
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico?v=1"><![endif]-->
+    <link rel="apple-touch-icon-precomposed" href="/assets/favicon_152.png">
+
+
+    <% if %w( development ).include? Rails.env %>
+      <%= stylesheet_link_tag "bootstrap-combined.no-icons.min.css", media: "all" %>
+      <%= stylesheet_link_tag "font-awesome", media: "all" %>
+    <% else %>
+      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <% end %>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36025669-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
+
+      <% if %w( production ).include? Rails.env %>
+        heap.load("1069702174");
+      <% else %>
+        heap.load("1981412560");
+      <% end %>
+    </script>
+
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= @body_class rescue '' %>">
+
+    <% if %w( development ).include? Rails.env %>
+      <%= javascript_include_tag "jquery.min.js"%>
+      <%= javascript_include_tag "bootstrap.min.js" %>
+    <% else %>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <% end %>
+    <%= yield %>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+    <% if %w( production ).include? Rails.env %>
+      <!--CrazyEgg-->
+      <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0014/9874.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+      </script>
+    <% end %>
+  </body>
+</html>

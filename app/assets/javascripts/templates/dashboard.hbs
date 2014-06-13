@@ -1,0 +1,41 @@
+<section id="panel" class="container-fluid">
+  <div class="row-fluid">
+    <div class="span1" id="sidebar-left">
+      
+
+      <div class="sidebar-nav nav-collapse">
+        <ul class="nav nav-tabs nav-stacked main-menu">
+          <!-- 
+          {{#linkTo "login" tagName="li"}}
+              <a {{bindAttr href="view.href"}}><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a>
+          {{/linkTo}} -->
+          {{#linkTo "instances" tagName="li"}}
+              <a {{bindAttr href="view.href"}}><i class="icon-hdd"></i><span class="hidden-tablet"> Databases</span></a>
+          {{/linkTo}}
+          {{#linkTo "backups" tagName="li"}}
+              <a {{bindAttr href="view.href"}}><i class="icon-archive"></i><span class="hidden-tablet">Backups</span></a>
+          {{/linkTo}}
+
+          {{#linkTo "subscriptions.index" tagName="li"}}
+              <a {{bindAttr href="view.href"}}><i class="icon-credit-card"></i><span class="hidden-tablet">Billing</span></a>
+          {{/linkTo}}
+          
+          <!--
+          <li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
+          <li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
+          <li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li> -->
+         
+        </ul>
+      </div>
+    </div>
+    
+    <div class="content span11">
+      {{yield}}
+    </div>
+    
+  </div>
+  
+  
+</section>
+
+    

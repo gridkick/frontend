@@ -1,0 +1,11 @@
+{{#if App.Auth.signedIn}}
+
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+    <i class="icon-user"></i> {{App.Auth.user.email}}
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="#" {{action logout target="view"}}><i class="icon-off"></i> Logout</a></li>
+  </ul>
+
+{{/if}}

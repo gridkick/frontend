@@ -1,0 +1,31 @@
+{{#if model.isLoaded}}
+  {{#if model}}
+    <p>
+      Your database backups are completed daily and saved in Amazon S3. Currently, we keep 100 days of backups, but
+      this is subject to change in the future. Follow the steps below to access
+      your backups with Cyberduck (Windows/Mac) or Transmit (Mac)
+    </p>
+
+    {{! there should only be one cred in the response }}
+    {{#each cred in controller}}
+    <p>
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#cyberduck" data-toggle="tab">Cyberduck</a>
+        </li>
+        <li><a href="#transmit" data-toggle="tab">Transmit</a></li>
+      </ul>
+      <div class="tab-content instructions">
+        <div class="tab-pane active" id="cyberduck">{{partial "backups/cyberduck"}}</div>
+        <div class="tab-pane" id="transmit">{{partial "backups/transmit"}}</div>
+      </div>
+    </p>
+
+
+    {{/each}}
+
+
+  {{else}}
+    <p>You don't currently have IAM credentials setup to access your backups. Please send an email to {{supportEmail}} so we can create them for you.</p>
+  {{/if}}
+{{/if}}

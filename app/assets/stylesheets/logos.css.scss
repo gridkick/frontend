@@ -1,0 +1,42 @@
+.sprite {
+    background: url(logos.png) no-repeat;
+    display: inline-block;
+}
+
+@mixin stitches-sprite($x: 0, $y: 0, $width: 0, $height: 0) {
+  background-position: $x $y;
+  width: $width;
+  height: $height;
+}
+
+.sprite-cassandra {
+    @include stitches-sprite(-5px, -5px, 185px, 40px);
+}
+
+.sprite-couchdb {
+    @include stitches-sprite(-5px, -55px, 75px, 60px);
+}
+
+.sprite-elasticsearch {
+    @include stitches-sprite(-5px, -125px, 195px, 40px);
+}
+
+.sprite-mongodb {
+    @include stitches-sprite(-90px, -55px, 138px, 65px);
+}
+
+.sprite-mysql {
+    @include stitches-sprite(-5px, -175px, 97px, 65px);
+}
+
+.sprite-postgresql {
+    @include stitches-sprite(-238px, -5px, 101px, 73px);
+}
+
+.sprite-redis {
+    @include stitches-sprite(-238px, -95px, 120px, 40px);
+}
+
+.sprite-riak {
+    @include stitches-sprite(-210px, -145px, 127px, 55px);
+}

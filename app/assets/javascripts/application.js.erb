@@ -1,0 +1,37 @@
+//= require handlebars
+//= require ember
+//= require ember-model
+//= require ember-auth
+//= require ember-easyForm
+//= require ember-bootstrap
+//= require jquery.payment
+//= require_self
+//= require auth
+//= require adventure_frontend
+//= require_tree .
+
+Ember.FEATURES["query-params"] = true;
+
+window.App = Ember.Application.create({
+  rootElement: '#app'
+});
+
+switch('<%= Rails.env %>'){
+  case 'staging':
+    App.baseUrl = 'https://staging-api.gridkick.com'
+    App.stripeKey ='pk_R8atiIoFS2BLPAIkdYL6pmXMdAk07' ;
+    break;
+  case 'production':
+    App.baseUrl = 'https://api.gridkick.com';
+    App.stripeKey ='pk_hT2VcK1CdOOA36UeoYHk1IBrUrPzb' ;
+    break;
+  case 'local':
+    App.baseUrl = 'https://local-api.gridkick.com';
+    App.stripeKey ='pk_R8atiIoFS2BLPAIkdYL6pmXMdAk07' ;
+    break;
+  default:
+    App.baseUrl = 'http://localhost:4000';
+    App.stripeKey ='pk_R8atiIoFS2BLPAIkdYL6pmXMdAk07' ;
+    App.LOG_TRANSITIONS =  true;
+    App.LOG_TRANSITIONS_INTERNAL = true;
+}

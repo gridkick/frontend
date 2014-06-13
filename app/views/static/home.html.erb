@@ -1,0 +1,170 @@
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#home"><%= image_tag("gridkick_color.png", alt: "GridKick") %></a>
+      <ul class="nav pull-right">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#customers">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+
+        <li class="divider-vertical"></li>
+        <li><a href="/login" id="login-nav">Login</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="/signup" id="signup-nav">Sign Up</a></li>
+        <li class="divider-vertical"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="hero">
+  <div class="container">
+    <div class="row-fluid tagline">
+        <h1 class="span12">
+          Databases on Demand
+        </h1>
+        <h4>
+          We help startups provision, manage, monitor and scale their data infrastructure.
+        </h4>
+    </div>
+
+    <div class="row-fluid features">
+      <div class="span2 feature" data-title="Don't waste time setting up your infrastructure. With GridKick as your database hosting provider, you will be up and running in minutes.">
+        <div class="img">
+          <i class="icon-off"></i>
+          <h4>Provision</h4>
+        </div>
+
+      </div>
+      <div class="span1 feature-arrow">
+        <i class="icon-circle-arrow-right hidden-phone"></i>
+        <i class="icon-circle-arrow-down visible-phone"></i>
+      </div>
+
+      <div class="span2 feature" data-title="View and manage all of your different databases in one dashboard. Need to spin up another node? No problem. ">
+        <div class="img">
+          <i class="icon-tasks"></i>
+          <h4>Manage</h4>
+        </div>
+      </div>
+      <div class="span1 feature-arrow">
+        <i class="icon-circle-arrow-right hidden-phone"></i>
+        <i class="icon-circle-arrow-down visible-phone"></i>
+      </div>
+      <div class="span2 feature" data-title="Your database shouldn't live in a black hole. Let us help you gain insight with our monitoring tools.">
+        <div class="ribbon-wrapper">
+          <div class="ribbon">
+              Coming Soon
+          </div>
+        </div>
+        <div class="img">
+          <i class="icon-bar-chart"></i>
+          <h4>Monitor</h4>
+        </div>
+
+      </div>
+      <div class="span1 feature-arrow">
+        <i class="icon-circle-arrow-right hidden-phone"></i>
+        <i class="icon-circle-arrow-down visible-phone"></i>
+      </div>
+      <div class="span2 feature" data-title="Easily scale your database with our easy to use web interface or command line client.">
+        <div class="ribbon-wrapper">
+          <div class="ribbon">
+              Coming Soon
+          </div>
+        </div>
+        <div class="img">
+          <i class="icon-signal"></i>
+          <h4>Scale</h4>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="databases">
+  <div class="container">
+    <div class="row-fluid">
+      <h3 class="span2">Databases</h3>
+      <ul class="span2">
+        <li><span data-title="Supported"><i class="icon-check"></i>MongoDB</span></li>
+        <li><span data-title="Supported"><i class="icon-check"></i>MySQL</span></li>
+        <li><span data-title="Supported"><i class="icon-check"></i>PostgreSQL</span></li>
+        <li><span data-title="Supported"><i class="icon-check"></i>Redis</span></li>
+
+      </ul>
+      <ul class="span2">
+        <li><span data-title="Planned"><i class="icon-check-empty"></i>Cassandra</span></li>
+        <li><span data-title="Planned"><i class="icon-check-empty"></i>CouchDB</span></li>
+        <li><span data-title="Planned"><i class="icon-check-empty"></i>ElasticSearch</span></li>
+        <li><span data-title="Planned"><i class="icon-check-empty"></i>MariaDB</span></li>
+        <!-- <li><i class="icon-check-empty"></i>Riak</li> -->
+      </ul>
+
+      <h3 class="span2 offset1 data-centers">Cloud Hosts</h3>
+      <ul class="span2">
+        <li><span data-title="Supported"><i class="icon-check"></i>Digital Ocean</span></li>
+        <li><span data-title="Planned"><i class="icon-check-empty"></i>Amazon</span></li>
+        <li><span data-title="Planned"><i class="icon-check-empty"></i>Rackspace</span></li>
+      </ul>
+
+    </div>
+    <!-- <div class="row-fluid logos">
+        <div class="">
+
+          <%= image_tag("redis.png", class: "redis", alt: "redis", title: "Supported") %>
+          <%= image_tag("mongodb.png", class: "mongodb", alt: "mongodb", title: "Supported") %>
+          <%= image_tag("postgresql.png", class: "postgresql", alt: "postgresql", title: "Supported") %>
+          <%= image_tag("mysql.png", class: "mysql", alt: "mysql", title: "Supported") %>
+
+          <%= image_tag("mariadb.png", class: "mariadb planned", alt: "mariadb", title: "Coming Soon") %>
+          <%= image_tag("cassandra.png", class: "cassandra planned", alt: "cassandra", title: "Coming Soon") %>
+          <%= image_tag("elasticsearch.png", class: "elasticsearch planned", alt: "elastic search", title: "Coming Soon") %>
+          <%= image_tag("couchdb.png", class: "couchdb planned", alt: "couchdb", title: "Coming Soon") %>
+          <%= image_tag("riak.png", class: "riak planned", alt: "riak", title: "Coming Soon") %>
+
+        </div>
+    </div> -->
+  </div>
+</section>
+
+<a name="features"></a>
+<%= render :partial => 'features' %>
+
+
+<a name="customers"></a>
+<%= render :partial => 'customers' %>
+
+<a name="pricing"></a>
+<%= render :partial => 'pricing' %>
+
+<%= render :partial => 'shared/footer' %>
+
+<script>
+  $(function() {
+
+    $('a').click(function() {
+      var h = $(this).attr('href');
+      if(h.indexOf('#') == 0) {
+        h = h.substring(1);
+        if(h == 'home') {
+          $('html, body').stop().animate({
+            scrollTop: 0
+          });
+        } else {
+          $('html, body').stop().animate({
+            scrollTop: $('a[name="' + h + '"]').offset().top
+          });
+        }
+        return false;
+      }
+      return true;
+    });
+
+    $(".feature, #databases ul li span").tooltip({placement: 'bottom'});
+  });
+</script>
+
+

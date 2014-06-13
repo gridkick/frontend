@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12">
+      <h4>Alpha Instructions</h4>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      Please use these instructions to try our alpha product. As it exists currently, the product is a small command line tool that allows you to easily provision preconfigured Redis, Mongo, Postgres, or MySQL instances running on a public cloud. Have more questions? Check out the <a href="#faq">FAQ</a> below.
+    </div>
+  </div>
+  <div class="row-fluid first-row">
+    <div class="span1 step-num">
+      0)
+    </div>
+    <div class="span8 step-text">
+      If you haven't already, watch the video on <a href="/">our homepage</a> and subscribe to our newsletter with your email address
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      1)
+    </div>
+    <div class="span8 step-text">
+      Install the command line script by running <code>curl -sL get.adv.io | bash -s</code>
+      <p>
+        <small class="muted">
+          (to uninstall just delete the <code>~/.adv</code> directory and remove the relevant line from your <code>~/.bashrc</code> or <code>~/.zshenv</code> file)
+        </small>
+      </p>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      2)
+    </div>
+    <div class="span8 step-text">
+      Add the presented line of code to either your <code>~/.bash_profile</code> or your <code>~/.zshenv</code> as instructed and open a new shell window
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      3)
+    </div>
+    <div class="span8 step-text">
+      Run the <code>adv try</code> command for and of our supported services (redis, mongo, postgres, mysql) and follow the prompts. i.e. <code>adv try redis</code>, <code>adv try mongo</code>, or <code>adv try redis mongo</code>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      4)
+    </div>
+    <div class="span8 step-text">
+      Check your email and follow the instructions there to check if your instance is up and running. This could take a minute.
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      5)
+    </div>
+    <div class="span8 step-text">
+      Try using your provisioned instance in a non-production or non-mission-critical application. Is it performant? Is it available?
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      6)
+    </div>
+    <div class="span8 step-text">
+      Run the <code>adv try</code> command with another service name you like using e.g. <code>neo4j</code>, <code>elasticsearch</code>, or <code>kafka</code>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      7)
+    </div>
+    <div class="span8 step-text">
+      Run the <code>adv share</code> command with the email address of someone else you think would like to try our service. For example: <code>adv share founders@gridkick.com</code>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1 step-num">
+      8)
+    </div>
+    <div class="span8 step-text">
+      Help us improve our product by filling out the form below or email us at <a href="mailto:founders@gridkick.com">founders@gridkick.com</a>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12 well feedback-form">
+      <iframe src="https://docs.google.com/forms/d/1TysDepkGE8mMiiqAT_tSAVCzsStAFh4AAvcgu5QOjdI/viewform?embedded=true&bc=f5f5f5&htc=777" id="alpha-feedback" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true">Loading...</iframe>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span6">
+      <a name="faq"></a>
+      <h5>FAQs</h5>
+    </div>
+    <div class="span6">
+      <h5>Disclaimers</h5>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span6">
+      Just some common questions we've been asked as people try out the product. These are specific to this private alpha and do not reflect any future releases we might produce.
+    </div>
+    <div class="span6">
+      We really hope you enjoy and find our services useful. That being said, any use of services provided by us, GridKick, imply that you agree with the following. If you do not agree, please do not use any of our services and contact us at <a href="mailto:founders@ad.venture.io">founders@ad.venture.io</a>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span6">
+      <dl class="faq-list">
+        <dt>Are the instances running on my own cloud accounts or are they managed?</dt>
+        <dd>All instances are managed by us, GridKick. You do not need to provide your credentials for different public clouds.</dd>
+        <dt>Does this cost anything?</dt>
+        <dd>Our product currently exists as a private alpha. As such, it is free to try while we improve it. See the disclaimers to the right.</dd>
+        <dt>Are the instances secure?</dt>
+        <dd>Currently, each instance is isolated and locked down except for the provided port, which is non-standard. We will improve this model in the future. Some ideas for possible security improvements are IP binding, SSH tunnels, or LAN-only access.</dd>
+      </dl>
+    </div>
+    <div class="span6">
+      <ul class="disclaimers">
+        <li>Our products are provided for testing purposes and come with no warranty</li>
+        <li>They are not ready to be used in production environments</li>
+        <li>We are not responsible for any losses incurred through the use of our services</li>
+        <li>We make no guarantees about the quality or availability of our services</li>
+        <li>We reserve the right to remove or turn off our services at any time</li>
+      </ul>
+    </div>
+  </div>
+</div>

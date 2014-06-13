@@ -1,0 +1,9 @@
+/.bundle
+/.env
+/config/deploy/*.env
+/log/*.log
+/tmp
+/vendor/bundle
+/vendor/assets/bower_components
+.ruby-version
+.ruby-gemset

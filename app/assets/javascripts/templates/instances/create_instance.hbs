@@ -1,0 +1,14 @@
+
+<div id="create-instance-row" class="row-fluid">
+  {{#if length}}
+    <span class="instance-count label pull-left">
+    {{activeInstances}}/{{maxInstances}} instances created
+    </span>
+  {{/if}}
+
+  <a id="create-instance" class="btn btn-primary pull-right" {{action showCreateForm target=view}}>
+    <i class="icon-plus"></i>
+    Create Instance
+  </a>
+
+</div>

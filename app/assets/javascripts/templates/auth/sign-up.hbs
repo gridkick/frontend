@@ -1,0 +1,31 @@
+
+{{#form-for model id="signup-form"}}
+
+    {{#if promoCode}}
+      {{#if promoValid}}
+        {{view Bootstrap.AlertMessage type="success" messageBinding=promoValidMsg}}
+      {{else}}
+        {{view Bootstrap.AlertMessage type="error" messageBinding=promoDescription}}
+      {{/if}}
+
+    {{/if}}
+
+    {{input email placeholder="email" inputConfig="class:input-block-level email;" label=" "}}
+
+    {{input password placeholder="password (8+ chars)" label=" " inputConfig="class:input-block-level password;"}}
+
+    {{input passwordConfirmation placeholder="password confirmation" label=" " inputConfig="class:input-block-level password-confirm;"}}
+
+     <label class="checkbox">
+      {{view Ember.Checkbox checkedBinding="model.acceptedTerms" class="accept-terms"}}
+      I agree to the <a {{action 'showTerms'}} href="#">Terms of Service</a>
+    </label>
+
+  <div>
+      <button class="btn btn-large btn-block" {{bindAttr disabled="notAcceptedTerms"}}>Create Account</button>
+  </div>
+
+{{/form-for}}
+
+<hr>
+Already have an account? {{#linkTo 'login'}} Log in {{/linkTo}}

@@ -1,0 +1,16 @@
+<section id="login" >
+  <div id="inner">
+    <div class="clearfix">
+      <a href="/" class="pull-right home-link">
+        <i class="icon-home"></i>
+      </a>
+    </div>
+
+    {{#if controller.alert}}
+      <div id="alert-container" {{bindAttr class=":alert alert.type"}}>{{controller.alert.msg}}</div>
+    {{/if}}
+
+    {{yield}}
+
+  </div>
+</section>

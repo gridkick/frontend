@@ -1,0 +1,40 @@
+{
+  "name" : "GridKick",
+  "version": "0.1",
+  "dependencies" : {
+    "jquery" : "~2.0.3",
+    "jquery.payment": "~1.0.2",
+    "ember-model": "0.0.9",
+    "ember-auth": "8.0.1",
+    "bootstrap": "2.3.2",
+    "ember-bootstrap": "https://github.com/emberjs-addons/ember-bootstrap/releases/download/01c440e23a4772f5caabe9d8e27e0b6ac9b35c6c/ember-bootstrap.js",
+    "ember-dockyard-validations": "latest",
+    "bootstrap-css": "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css",
+    "animate.css": "~2.1.0"
+  },
+  "install": {
+    "path": {
+      "css": "stylesheets",
+      "js":  "javascripts"
+    },
+    "sources" : {
+      "jquery": "bower_components/jquery/jquery.min.js",
+      "ember-bootstrap": {
+        "mapping": [
+          {"bower_components/ember-bootstrap/index.js": "ember-bootstrap.js"}
+        ]
+      },
+      "bootstrap": ["bower_components/bootstrap/docs/assets/js/bootstrap.min.js"],
+      "ember-dockyard-validations": {
+        "mapping": [
+          {"bower_components/ember-dockyard-validations/easyForm/ember-easyForm-1.0.0.beta.1.js": "ember-easyForm.js"}
+        ]
+      },
+      "bootstrap-css": {
+        "mapping": [{"bower_components/bootstrap-css/index.css": "bootstrap-combined.no-icons.min.css"}]
+      },
+      "ember-auth": "bower_components/ember-auth/dist/ember-auth.js"
+    },
+    "ignore": ["ember", "handlebars"]
+  }
+}

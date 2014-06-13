@@ -1,0 +1,17 @@
+
+<form class="clearfix">
+  {{input email inputConfig="class:input-block-level;" label=" " placeholder="email"}}
+
+  {{input password inputConfig="class:input-block-level;" label=" " placeholder="password"}}
+     
+  <div>
+      <button class="btn btn-large btn-block">Login</button>
+  </div>
+</form>
+<hr>
+<div>
+  Need an Account? {{#linkTo 'signup'}} Sign Up {{/linkTo}}
+</div>
+<div>
+  {{#linkTo 'forgotPassword'}} Forgot Password? {{/linkTo}}
+</div>
